@@ -1,0 +1,43 @@
+<html>
+<head>
+    day3-2
+</head>
+<body>
+<script>
+var obj1 = { name: 'person1', age: 6 };
+var obj2 = { age: 6, name: 'person1' };
+
+  
+    
+function cmp(obj1,obj2){
+    var obj1k1=Object.keys(obj1);
+var obj1k2=Object.keys(obj2);
+for(var key of obj1k1){
+    if(obj1[key]!==obj2[key]){
+        return false;
+    }
+}
+ return true;   
+}
+if(cmp(obj1,obj2)){
+    console.log("True");
+
+}else{
+    console.log("False");
+}
+
+
+
+</script>
+
+
+
+</body>
+ 
+
+
+
+
+
+
+</html>
