@@ -1,0 +1,65 @@
+<html>
+<head>
+    Day3-1
+</head>
+<body>
+
+<script>
+var xhr = new XMLHttpRequest();
+xhr.open("GET", "https://restcountries.com/v3.1/all", true);
+
+xhr.onload = function() {
+    if (xhr.status >= 200 && xhr.status < 300) {
+        var data = JSON.parse(xhr.responseText);
+        data.forEach(function(country) {
+            var name = country.name.common;
+            var region = country.region ;
+            var subregion = country.subregion ;
+            var population = country.population;
+            console.log(`country: ${name}, population: ${population}, religion: ${region}, subreligion: ${subregion}`);
+        });
+    } else {
+        console.error('The request failed:');
+    }
+};
+
+xhr.onerror = function() {
+    console.error('Error');
+};
+
+xhr.send();
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
