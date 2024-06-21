@@ -1,0 +1,49 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+<script>
+    var xhr = new XMLHttpRequest();
+xhr.open("GET", "https://restcountries.com/v3.1/all", true);
+
+xhr.onload = function() {
+    if (xhr.status >= 200 && xhr.status < 300) {
+        var data = JSON.parse(xhr.responseText);
+        data.forEach(function(country) {
+            console.log(country.flags.png);
+        });
+    } else {
+        console.error('The request failed:');
+    }
+};
+
+xhr.onerror = function() {
+    console.error('Error');
+};
+
+xhr.send();
+
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </script>
+
+
+
+
+
+
+
+    </body>
+</html>
